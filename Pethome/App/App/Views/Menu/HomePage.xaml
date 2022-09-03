@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pethome.Views.Menu.HomePage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:cardview="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame">
+
+    <Grid RowDefinitions="auto,*,288,auto"
+          BackgroundColor="White">
+        <Label Text="Adopcion"
+               FontFamily="{StaticResource PoppinsSemiBold}"
+               FontSize="20"
+               Margin="40,10"
+               TextColor="Black"/>
+        <cardview:CoverFlowView IsCyclical="False"
+                                ItemsSource="{Binding Listamusica}"
+                                Grid.Row="1">
+            <cardview:CardsView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="30">
+                        <Frame  CornerRadius="18"
+                                BackgroundColor="LightGray"
+                                Padding="0"
+                                HasShadow="False">
+                            <Image Source="{Binding Image}"/>
+                        </Frame>
+                        <Grid VerticalOptions="End">
+                            <sharpnado:MaterialFrame CornerRadius="18"
+                                                     MaterialBlurStyle="Light"
+                                                     MaterialTheme="AcrylicBlur"/>
+                            <StackLayout Margin="15,0">
+                                <Label Text="{Binding Name}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                <Label Text="{Binding Age}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                <Label Text="{Binding Location}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                <Label Text="Ver mas"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"
+                                       FontSize="14"/>
+
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </cardview:CardsView.ItemTemplate>
+        </cardview:CoverFlowView>
+    </Grid>
+</ContentPage>

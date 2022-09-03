@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pethome.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Colors-->
+            <Color x:Key="GrayColor">#D9D9D9</Color>
+            <Color x:Key="WhiteColor"></Color>
+            <Color x:Key="PethGreen">#3CB03A</Color>
+            <Color x:Key="Aqua">#00A79D</Color>
+            <Color x:Key="LightGray">#D3D0D0</Color>
+
+            <!-- Font Poppins-->
+            <OnPlatform  x:Key="Poppins" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-Thin.ttf#poppins" />
+                <On Platform="iOS" Value="poppins" />
+            </OnPlatform>
+
+            <OnPlatform  x:Key="PoppinsSemiBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-SemiBold.ttf#poppinsemibold" />
+                <On Platform="iOS" Value="poppinSemiBold" />
+            </OnPlatform>
+
+            <OnPlatform  x:Key="PoppinsLight" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-Light.ttf#poppinsLight" />
+                <On Platform="iOS" Value="poppinLight" />
+            </OnPlatform>
+
+            <OnPlatform  x:Key="PoppinsBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-Bold.ttf#poppinsbold" />
+                <On Platform="iOS" Value="poppinsBold" />
+            </OnPlatform>
+
+            <Style x:Key="DrinkImagePanelStyle" TargetType="Grid">
+                <Setter Property="Margin" Value="36, 80, 36, 36" />
+            </Style>
+
+            <Style x:Key="DrinkImageStyle" TargetType="Image">
+                <Setter Property="Margin" Value="12" />
+            </Style>
+
+            <Style x:Key="DrinkTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsSemiBold}" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="DrinkDescriptionStyle" TargetType="Label" BasedOn="{StaticResource DrinkTitleStyle}">
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsLight}" />
+            </Style>
+
+            <Style x:Key="BuyButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
