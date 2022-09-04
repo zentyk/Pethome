@@ -12,45 +12,26 @@
             <Color x:Key="LightGray">#D3D0D0</Color>
 
             <!-- Font Poppins-->
-            <OnPlatform  x:Key="Poppins" x:TypeArguments="x:String">
-                <On Platform="Android" Value="Poppins-Thin.ttf#poppins" />
-                <On Platform="iOS" Value="poppins" />
+            <OnPlatform x:Key="Popins" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-Black.ttf#popins"/>
+                <On Platform="iOS" Value="poppins"/>
+            </OnPlatform>
+            
+            <OnPlatform x:Key="PoppinsSemiBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-SemiBold.ttf#poppinsemibold"/>
+                <On Platform="iOS" Value="poppinSemiBold"/>
             </OnPlatform>
 
-            <OnPlatform  x:Key="PoppinsSemiBold" x:TypeArguments="x:String">
-                <On Platform="Android" Value="Poppins-SemiBold.ttf#poppinsemibold" />
-                <On Platform="iOS" Value="poppinSemiBold" />
+            <OnPlatform x:Key="PoppinsLight" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Poppins-Light.ttf#PoppinsLight"/>
+                <On Platform="iOS" Value="poppinsLight"/>
+            </OnPlatform>
+            
+            <OnPlatform x:Key="PoppinsBold" x:TypeArguments="x:String">
+                    <On Platform="Android" Value="Poppins-Bold#PoppinsBold"/>
+                    <On Platform="iOS" Value="PoppinsBold"/>
             </OnPlatform>
 
-            <OnPlatform  x:Key="PoppinsLight" x:TypeArguments="x:String">
-                <On Platform="Android" Value="Poppins-Light.ttf#poppinsLight" />
-                <On Platform="iOS" Value="poppinLight" />
-            </OnPlatform>
-
-            <OnPlatform  x:Key="PoppinsBold" x:TypeArguments="x:String">
-                <On Platform="Android" Value="Poppins-Bold.ttf#poppinsbold" />
-                <On Platform="iOS" Value="poppinsBold" />
-            </OnPlatform>
-
-            <Style x:Key="DrinkImagePanelStyle" TargetType="Grid">
-                <Setter Property="Margin" Value="36, 80, 36, 36" />
-            </Style>
-
-            <Style x:Key="DrinkImageStyle" TargetType="Image">
-                <Setter Property="Margin" Value="12" />
-            </Style>
-
-            <Style x:Key="DrinkTitleStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
-                <Setter Property="FontSize" Value="24" />
-                <Setter Property="FontFamily" Value="{StaticResource PoppinsSemiBold}" />
-                <Setter Property="Margin" Value="12, 0" />
-            </Style>
-
-            <Style x:Key="DrinkDescriptionStyle" TargetType="Label" BasedOn="{StaticResource DrinkTitleStyle}">
-                <Setter Property="FontSize" Value="10" />
-                <Setter Property="FontFamily" Value="{StaticResource PoppinsLight}" />
-            </Style>
 
             <Style x:Key="BuyButtonStyle" TargetType="Button">
                 <Setter Property="CornerRadius" Value="12" />

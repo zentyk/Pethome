@@ -64,36 +64,16 @@
     <Compile Include="Splashscreen.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Black.ttf">
-      <Link>Fonts\Poppins-Black.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Bold.ttf">
-      <Link>Fonts\Poppins-Bold.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-ExtraBold.ttf">
-      <Link>Fonts\Poppins-ExtraBold.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-ExtraLight.ttf">
-      <Link>Fonts\Poppins-ExtraLight.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Italic.ttf">
-      <Link>Fonts\Poppins-Italic.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Light.ttf">
-      <Link>Fonts\Poppins-Light.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Medium.ttf">
-      <Link>Fonts\Poppins-Medium.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Regular.ttf">
-      <Link>Fonts\Poppins-Regular.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-SemiBold.ttf">
-      <Link>Fonts\Poppins-SemiBold.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\..\external\assets pethome\Poppins-Thin.ttf">
-      <Link>Fonts\Poppins-Thin.ttf</Link>
-    </AndroidAsset>
+    <AndroidAsset Include="Assets\Poppins-Black.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Bold.ttf" />
+    <AndroidAsset Include="Assets\Poppins-ExtraBold.ttf" />
+    <AndroidAsset Include="Assets\Poppins-ExtraLight.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Italic.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Light.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Medium.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Regular.ttf" />
+    <AndroidAsset Include="Assets\Poppins-SemiBold.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Thin.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
