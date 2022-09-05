@@ -16,7 +16,7 @@ namespace Pethome.Views.Menu
         public HomePage()
         {
             InitializeComponent();
-            BindingContext = new VMlistamusica(Navigation);
+            BindingContext = new HomePageViewModel(Navigation);
         }
     }
 }

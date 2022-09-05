@@ -23,7 +23,7 @@
                    Grid.Row="0"
                    FontFamily="{StaticResource PoppinsSemiBold}"
                    FontSize="20"
-                   Margin="20,10"
+                   Margin="50,10"
                    TextColor="Black"/>
             <cardview:CoverFlowView IsCyclical="False"
                                 ItemsSource="{Binding Listamusica}"
@@ -70,6 +70,107 @@
                 </cardview:CardsView.ItemTemplate>
             </cardview:CoverFlowView>
 
+            <Label Text="Amigos extraviados"
+                   Grid.Row="2"
+                   FontFamily="{StaticResource PoppinsSemiBold}"
+                   FontSize="20"
+                   Margin="50,10"
+                   TextColor="Black"/>
+            <cardview:CoverFlowView IsCyclical="False"
+                                ItemsSource="{Binding Listamusica}"
+                                Grid.Row="3" Grid.ColumnSpan="2">
+                <cardview:CardsView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="40,.60,40,40">
+                            <Frame  CornerRadius="18"
+                                BackgroundColor="#D9D9D9"
+                                Padding="-40"
+                                HasShadow="False">
+                                <Image Source="{Binding Image}"/>
+                            </Frame>
+                            <Grid VerticalOptions="End">
+                                <sharpnado:MaterialFrame CornerRadius="18"
+                                                     MaterialBlurStyle="Light"
+                                                     MaterialTheme="AcrylicBlur"/>
+                                <StackLayout Margin="15,0">
+                                    <Label Text="{Binding Name}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                    <Label Text="{Binding Age}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                    <Label Text="{Binding Location}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                    <Label Text="Ver mas"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"
+                                       FontSize="14"/>
+
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </cardview:CardsView.ItemTemplate>
+            </cardview:CoverFlowView>
+
+            <Label Text="Veterinarios cerca de ti"
+                   Grid.Row="4"
+                   FontFamily="{StaticResource PoppinsSemiBold}"
+                   FontSize="20"
+                   Margin="50,10"
+                   TextColor="Black"/>
+            <cardview:CoverFlowView IsCyclical="False"
+                                ItemsSource="{Binding Listamusica}"
+                                Grid.Row="5" Grid.ColumnSpan="2">
+                <cardview:CardsView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="40,.60,40,40">
+                            <Frame  CornerRadius="18"
+                                BackgroundColor="#D9D9D9"
+                                Padding="-40"
+                                HasShadow="False">
+                                <Image Source="{Binding Image}"/>
+                            </Frame>
+                            <Grid VerticalOptions="End">
+                                <sharpnado:MaterialFrame CornerRadius="18"
+                                                     MaterialBlurStyle="Light"
+                                                     MaterialTheme="AcrylicBlur"/>
+                                <StackLayout Margin="15,0">
+                                    <Label Text="{Binding Name}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                    <Label Text="{Binding Age}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                    <Label Text="{Binding Location}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                    <Label Text="Ver mas"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"
+                                       FontSize="14"/>
+
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </cardview:CardsView.ItemTemplate>
+            </cardview:CoverFlowView>
         </Grid>
     </ScrollView>
     

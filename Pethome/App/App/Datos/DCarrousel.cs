@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Pethome.Datos
 {
-    public class Dmusica
+    public class DCarrousel
     {
-        public async Task<List<Mmusica>> adoption()
+        public async Task<List<CarruselList>> adoption()
         {
-            var lista = new List<Mmusica>()
+            var lista = new List<CarruselList>()
             {
-                new Mmusica
+                new CarruselList
                 {
                   Name = "Marley",
                   Image = "dogs.png",
@@ -20,7 +20,7 @@ namespace Pethome.Datos
                   Location = "Mexico"
                 },
 
-                 new Mmusica
+                 new CarruselList
                  {
                      Name = "Odie",
                      Image = "dogs.png",
@@ -28,7 +28,7 @@ namespace Pethome.Datos
                      Location = "Mexico"
                  },
 
-                  new Mmusica
+                  new CarruselList
                   {
                       Name = "Snoopy",
                       Image = "dogs.png",
@@ -36,7 +36,7 @@ namespace Pethome.Datos
                       Location = "Mexico"
                   },
 
-                   new Mmusica
+                   new CarruselList
                    {
                        Name = "Balto",
                        Image = "dogs.png",
@@ -44,7 +44,7 @@ namespace Pethome.Datos
                        Location = "Mexico"
                    },
 
-                    new Mmusica
+                    new CarruselList
                     {
                         Name = "Golfo",
                         Image = "dogs.png",
@@ -52,7 +52,7 @@ namespace Pethome.Datos
                         Location = "Mexico"
                     },
 
-                     new Mmusica
+                     new CarruselList
                      {
                          Name = "Milo",
                          Image = "dogs.png",

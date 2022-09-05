@@ -9,13 +9,13 @@ using Xamarin.Forms;
 
 namespace Pethome.ViewModels
 {
-    public class VMlistamusica : BaseViewModel
+    public class HomePageViewModel : BaseViewModel
     {
         #region VARIABLES
-        List<Mmusica> _listamusica;
+        List<CarruselList> _listamusica;
         #endregion
         #region CONSTRUCTOR
-        public VMlistamusica(INavigation navigation)
+        public HomePageViewModel(INavigation navigation)
         {
             Navigation = navigation;
             MostrarMusica();
@@ -23,7 +23,7 @@ namespace Pethome.ViewModels
 
         #endregion
         #region OBJETOS
-        public List<Mmusica> Listamusica
+        public List<CarruselList> Listamusica
         {
             get { return _listamusica; }
             set { SetValue(ref _listamusica, value); }
@@ -32,7 +32,7 @@ namespace Pethome.ViewModels
         #region PROCESOS
         public async Task MostrarMusica()
         {
-            var funcion = new Dmusica();
+            var funcion = new DCarrousel();
             Listamusica = await funcion.adoption();
         }
         public void ProcesoSimple()

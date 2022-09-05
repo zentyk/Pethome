@@ -11,10 +11,10 @@
              BackgroundColor="#3CB03A">
 
     <TabbedPage.Children>
-        
-            <local:HomePage Title="Inicio"/>
-            <local:SettingsPage Title="Ajustes"/>
-            <local:AccountPage Title="Cuenta"/>
+
+        <local:HomePage Title="Inicio" IconImageSource="home.png"/>
+        <local:SettingsPage Title="Ajustes" IconImageSource="settings.png"/>
+        <local:AccountPage Title="Cuenta" IconImageSource="profile.png" />
        
     </TabbedPage.Children>
 </TabbedPage>
