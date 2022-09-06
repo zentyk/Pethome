@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace App.Droid
+namespace Pethome.Droid
 {
     [Activity(Label = "Pethome", Icon = "@mipmap/icon", Theme = "@style/theme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize)]
     public class Splashscreen : Activity
