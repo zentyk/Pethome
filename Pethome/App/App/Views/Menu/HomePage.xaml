@@ -6,193 +6,247 @@
              xmlns:cardview="clr-namespace:PanCardView;assembly=PanCardView"
              xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame" 
              xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" 
-             xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView">
-    
-    <ScrollView BackgroundColor="White">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+             xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
+             BackgroundColor="White">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <StackLayout>
-                <Label Text="Adopcion"
-                       FontFamily="{StaticResource PoppinsSemiBold}"
-                       FontSize="20"
-                       
-                       Margin="50,10"
-                       TextColor="Black"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                <cardview:CarouselView      
+                <StackLayout Grid.Row="0">
+                    <Label Text="Adopcion"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin="20,10"
+                           TextColor="Black"/>
+
+                    <cardview:CarouselView   
                     ItemsSource="{Binding Listamusica}"
-                    SlideShowDuration="3600"
+                    SlideShowDuration="3500"
                     IndicatorView="indicatorview">
-                    <x:Arguments>
-                        <proc:CarouselProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1"/>
-                    </x:Arguments>
+                        <x:Arguments>
+                            <proc:CarouselProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1"/>
+                        </x:Arguments>
 
-                    <cardview:CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid RowDefinitions="auto,*,288,*">
-                                <Frame CornerRadius="20" 
-                                        Margin="40,6,40,40"
+                        <cardview:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="auto,*,10,auto">
+                                    <Frame CornerRadius="20" 
+                                        Margin="19,20,40,40"
                                         Padding="0"
                                         HasShadow="False">
-                                    <Image Source="{Binding Image}" Aspect="AspectFill"/>
-                                </Frame>
-                                <Grid VerticalOptions="End">
-                                    <sharpnado:MaterialFrame CornerRadius="18"
-                                                 Margin="40,40,40,40"
+                                        <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Grid VerticalOptions="End">
+                                        <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
                                                  Padding="36"
                                                  MaterialBlurStyle="Light"
                                                  MaterialTheme="AcrylicBlur"/>
-                                    <StackLayout Margin="70,40">
-                                        <Label Text="{Binding Name}"
+                                        <StackLayout Margin="70,40">
+                                            <Label Text="{Binding Name}"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                        <Label Text="{Binding Age}"
+                                            <Label Text="{Binding Age}"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                        <Label Text="{Binding Location}"
+                                            <Label Text="{Binding Location}"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                        <Label Text="Ver mas"
+                                            <Label Text="Ver mas"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        HorizontalOptions="End"
                                        FontSize="14"/>
-
-                                    </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </DataTemplate>
-                    </cardview:CarouselView.ItemTemplate>
-                </cardview:CarouselView>
-                <IndicatorView  x:Name="indicatorview"
+                            </DataTemplate>
+                        </cardview:CarouselView.ItemTemplate>
+                    </cardview:CarouselView>
+                    <IndicatorView x:Name="indicatorview"
                                 AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
                                 AbsoluteLayout.LayoutFlags="PositionProportional"
                                 IndicatorColor="LightGray"
                                 IndicatorSize="10"
-                                SelectedIndicatorColor="Black"
-                                Margin="-450"/>
+                                SelectedIndicatorColor="Black"/>
+                </StackLayout>
 
-            </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Label Text="Amigos extraviados"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin="20,10"
+                           TextColor="Black"/>
 
-            <StackLayout>
-                <Label Text="Amigos extraviados"
-                       FontFamily="{StaticResource PoppinsSemiBold}"
-                       FontSize="20"
-                       Margin="50,10"
-                       TextColor="Black"/>
-
-                <cardview:CarouselView      
+                    <cardview:CarouselView   
                     ItemsSource="{Binding Listamusica}"
-                    SlideShowDuration="3600"
-                    IndicatorView="indicatorview">
-                    <x:Arguments>
-                        <proc:CarouselProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1"/>
-                    </x:Arguments>
+                    SlideShowDuration="3500"
+                    IndicatorView="indicatorviews">
+                        <x:Arguments>
+                            <proc:CarouselProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1"/>
+                        </x:Arguments>
 
-                    <cardview:CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid RowDefinitions="auto,*,288,*">
-                                <Frame CornerRadius="20" 
-                                        Margin="40,6,40,40"
+                        <cardview:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="auto,*,10,auto">
+                                    <Frame CornerRadius="20" 
+                                        Margin="19,20,40,40"
                                         Padding="0"
                                         HasShadow="False">
-                                    <Image Source="{Binding Image}" Aspect="AspectFill"/>
-                                </Frame>
-                                <Grid VerticalOptions="End">
-                                    <sharpnado:MaterialFrame CornerRadius="18"
-                                                 Margin="40,40,40,40"
+                                        <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Grid VerticalOptions="End">
+                                        <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
                                                  Padding="36"
                                                  MaterialBlurStyle="Light"
                                                  MaterialTheme="AcrylicBlur"/>
-                                    <StackLayout Margin="70,40">
-                                        <Label Text="{Binding Name}"
+                                        <StackLayout Margin="70,40">
+                                            <Label Text="{Binding Name}"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                        <Label Text="{Binding Age}"
+                                            <Label Text="{Binding Age}"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                        <Label Text="{Binding Location}"
+                                            <Label Text="{Binding Location}"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                        <Label Text="Ver mas"
+                                            <Label Text="Ver mas"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        HorizontalOptions="End"
                                        FontSize="14"/>
-
-                                    </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </DataTemplate>
-                    </cardview:CarouselView.ItemTemplate>
-                </cardview:CarouselView>
-                <IndicatorView  x:Name="indicatorview"
+                            </DataTemplate>
+                        </cardview:CarouselView.ItemTemplate>
+                    </cardview:CarouselView>
+                    <IndicatorView x:Name="indicatorviews"
                                 AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
                                 AbsoluteLayout.LayoutFlags="PositionProportional"
                                 IndicatorColor="LightGray"
                                 IndicatorSize="10"
-                                SelectedIndicatorColor="Black"
-                                Margin="-450"/>
+                                Margin="10"
+                                SelectedIndicatorColor="Black"/>
+                </StackLayout>
 
-            </StackLayout>
-        </Grid>
-    </ScrollView>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+                <StackLayout Grid.Row="2">
+                    <Label Text="Veterinarias cercas de ti"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin="20,10"
+                           TextColor="Black"/>
+
+                    <cardview:CarouselView   
+                    ItemsSource="{Binding Listamusica}"
+                    SlideShowDuration="3500"
+                    IndicatorView="indicatorViews">
+                        <x:Arguments>
+                            <proc:CarouselProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1"/>
+                        </x:Arguments>
+
+                        <cardview:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="auto,*,10,auto">
+                                    <Frame CornerRadius="20" 
+                                        Margin="19,20,40,40"
+                                        Padding="0"
+                                        HasShadow="False">
+                                        <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Grid VerticalOptions="End">
+                                        <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
+                                                 Padding="36"
+                                                 MaterialBlurStyle="Light"
+                                                 MaterialTheme="AcrylicBlur"/>
+                                        <StackLayout Margin="70,40">
+                                            <Label Text="{Binding Name}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                            <Label Text="{Binding Age}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                            <Label Text="{Binding Location}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+
+                                            <Label Text="Ver mas"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"
+                                       FontSize="14"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </cardview:CarouselView.ItemTemplate>
+                    </cardview:CarouselView>
+                    <IndicatorView x:Name="indicatorViews"
+                                AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                IndicatorColor="LightGray"
+                                IndicatorSize="10"
+                                Margin="10"
+                                SelectedIndicatorColor="Black"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--<Grid RowDefinitions="auto,*,288,auto" 
         BackgroundColor="White">
         <Label Text="Adopcion"
