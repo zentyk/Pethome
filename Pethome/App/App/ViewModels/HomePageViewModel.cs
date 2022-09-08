@@ -1,5 +1,6 @@
 ﻿using Pethome.Datos;
 using Pethome.Models;
+using Pethome.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,14 +36,14 @@ namespace Pethome.ViewModels
             var funcion = new DCarrousel();
             Listamusica = await funcion.adoption();
         }
-        public void ProcesoSimple()
+        public async Task AdoptCommand()
         {
-
+          await Navigation.PushAsync(new AdoptionPage());
         }
         #endregion
         #region COMANDOS
         //public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
-        public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        public ICommand adoptcommand => new Command(async () => await AdoptCommand());
         #endregion
     }
 }

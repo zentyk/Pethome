@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             NavigationPage.HasNavigationBar="False"
+             xmlns:Pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Pethome.Views.AdoptionPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="arrow"
+                       HorizontalOptions="Start"
+                       Aspect="AspectFit"
+                       HeightRequest="25"
+                       Grid.Row="0"
+                       Margin="20"/>
+
+                <Label Text="Mascotas en adopción"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Padding="15"
+                       HorizontalTextAlignment="Center"
+                       FontFamily="{StaticResource PoppinsSemiBold}"
+                       FontSize="20"/>
+                
+                <Image Grid.Row="2" 
+                       Source="pets" 
+                       Aspect="AspectFill"
+                       VerticalOptions="Start"/>
+                <Pancake:PancakeView Grid.Row="3"
+                                      BackgroundColor="White"
+                                      Margin="0,-85"/>
+               
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
