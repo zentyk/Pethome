@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pethome.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace Pethome.Views
         public AdoptionPage()
         {
             InitializeComponent();
+            BindingContext = new AdoptionPageViewModel(Navigation);
+        }
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

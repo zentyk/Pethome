@@ -12,7 +12,7 @@ namespace Pethome.Datos
         {
             var list = new List<AdoptionList>()
             {
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -20,7 +20,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -28,7 +28,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -36,7 +36,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -44,7 +44,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -52,7 +52,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -60,7 +60,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -68,7 +68,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -76,7 +76,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,
@@ -84,7 +84,7 @@ namespace Pethome.Datos
                     Description = "Bonito, abediente, jugueton."
                 },
 
-                new AdoptionList()
+                new AdoptionList
                 {
                     Name = "Nilo",
                     Age = 1,

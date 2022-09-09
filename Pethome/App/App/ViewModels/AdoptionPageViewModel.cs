@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pethome.Datos;
+using Pethome.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,25 +12,28 @@ namespace Pethome.ViewModels
     public class AdoptionPageViewModel : BaseViewModel
     {
         #region VARIABLES
-        string _Texto;
+        List<AdoptionList> _adoptionlist;
         #endregion
         #region CONSTRUCTOR
         public AdoptionPageViewModel(INavigation navigation)
         {
             Navigation = navigation;
+            Adoption();
         }
+
         #endregion
         #region OBJETOS
-        public string Texto
+        public List<AdoptionList> Adoptionlist
         {
-            get { return _Texto; }
-            set { SetValue(ref _Texto, value); }
+            get { return _adoptionlist; }
+            set { SetValue(ref _adoptionlist, value); }
         }
         #endregion
         #region PROCESOS
-        public async Task ProcesoAsyncrono()
+        private async Task Adoption()
         {
-
+            var fun = new DAdoption();
+            Adoptionlist = await fun.adoptionList();
         }
         public void ProcesoSimple()
         {
@@ -36,7 +41,7 @@ namespace Pethome.ViewModels
         }
         #endregion
         #region COMANDOS
-        public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
+       
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion
     }
