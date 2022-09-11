@@ -24846,7 +24846,7 @@ namespace App.Droid
 			public const int abc_vector_test = 2131165268;
 			
 			// aapt resource value: 0x7F070055
-			public const int arrow = 2131165269;
+			public const int Arrow = 2131165269;
 			
 			// aapt resource value: 0x7F070056
 			public const int Arroww = 2131165270;
@@ -28022,13 +28022,16 @@ namespace App.Droid
 		{
 			
 			// aapt resource value: 0x7F0C0000
-			public const int icon = 2131492864;
+			public const int arrow = 2131492864;
 			
 			// aapt resource value: 0x7F0C0001
-			public const int icon_round = 2131492865;
+			public const int icon = 2131492865;
 			
 			// aapt resource value: 0x7F0C0002
-			public const int launcher_foreground = 2131492866;
+			public const int icon_round = 2131492866;
+			
+			// aapt resource value: 0x7F0C0003
+			public const int launcher_foreground = 2131492867;
 			
 			static Mipmap()
 			{

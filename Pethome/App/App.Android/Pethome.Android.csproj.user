@@ -4,7 +4,7 @@
     <SelectedDevice>HMD Global Nokia 6.1</SelectedDevice>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
     <ActiveDebugProfile>HMD Global Nokia 6.1 %28Android 10.0 - API 29%29</ActiveDebugProfile>
-    <DefaultDevice>nexus_10_pie_9_0_-_api_28</DefaultDevice>
+    <DefaultDevice>nexus_one_pie_9_0_-_api_28</DefaultDevice>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

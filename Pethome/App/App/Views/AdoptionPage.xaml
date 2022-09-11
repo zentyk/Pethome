@@ -15,19 +15,17 @@
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Source="petsBackground" Aspect="AspectFill" VerticalOptions="Start"/>
             <StackLayout>
-                <controls:CircleImage Source="Arroww.png"
-                                      Grid.Row="0"
-                                      Margin="25,15"
-                                      WidthRequest="30"
-                                      Aspect="AspectFill"
-                                      HorizontalOptions="Start"
-                                      BackgroundColor="#00A79D"/>
-                <Label Text="Animales en adopcion" 
+                <Button    ImageSource="Arrow.png"
+                           Margin="35,15"
+                           WidthRequest="4"
+                           HorizontalOptions="Start"/>
+
+                <Label Text="Animales en adopción" 
                        TextColor="White" 
                        FontSize="20" 
                        Grid.Row="0" 
                        HorizontalTextAlignment="Center"  
-                       Margin="5,-50"
+                       Margin="-58"
                        FontFamily="{StaticResource PoppinsSemiBold}"/>
             </StackLayout>
             <Pancake:PancakeView Grid.Row="2"
