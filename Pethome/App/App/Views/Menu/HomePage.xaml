@@ -26,6 +26,320 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Row="0">
+
+                    <Frame HasShadow="False"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="2,40,20,30"
+                       HeightRequest="350"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+
+                        <StackLayout>
+                            <Label Text="Adopción"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           TextColor="Black"/>
+
+                            <CarouselView ItemsSource="{Binding Listamusica}"
+                  IndicatorView="indicatorView">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid RowDefinitions="290,4">
+                                            <Frame CornerRadius="18" 
+                                        Margin="10,10,10,10"
+                                        Padding="0"
+                                        HasShadow="False">
+                                                <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                            </Frame>
+                                            <Grid VerticalOptions="End">
+                                                <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="10,30,10,10"
+                                                 Padding="16"
+                                                 MaterialBlurStyle="Light"
+                                                 MaterialTheme="AcrylicBlur"/>
+                                                <StackLayout Margin="40,30">
+
+                                                    <Label Text="{Binding Name}"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   TextColor="White"
+                                                   FontSize="13"/>
+
+                                                    <Label Text="{Binding Age}"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   FontSize="13"/>
+
+                                                    <Label Text="{Binding Location}"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"                                                   
+                                                   FontSize="13"/>
+
+                                                    <Label Text="Detalles"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   HorizontalOptions="End"
+                                                   FontSize="13"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView x:Name="indicatorView"
+                                   IndicatorColor="LightGray"
+                                   SelectedIndicatorColor="DarkGray"
+                                   HorizontalOptions="Center"
+                                   IndicatorSize="10"
+                                   Margin="0"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="1">
+
+                    <Frame HasShadow="False"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="2,40,20,30"
+                       HeightRequest="350"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+
+                        <StackLayout>
+                            <Label Text="Amigos extraviados"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin=".3"
+                           TextColor="Black"/>
+                            <CarouselView ItemsSource="{Binding Listamusica}"
+                  IndicatorView="indicatorViews">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid RowDefinitions="290,4">
+                                            <Frame CornerRadius="20" 
+                                        Margin="19,10,40,40"
+                                        Padding="0"
+                                        HasShadow="False">
+                                                <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                            </Frame>
+                                            <Grid VerticalOptions="End">
+                                                <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
+                                                 Padding="36"
+                                                 MaterialBlurStyle="Light"
+                                                 MaterialTheme="AcrylicBlur"/>
+                                                <StackLayout Margin="70,40">
+
+                                                    <Label Text="{Binding Name}"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   TextColor="White"
+                                                   FontSize="13"/>
+
+                                                    <Label Text="{Binding Age}"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   FontSize="13"/>
+
+                                                    <Label Text="{Binding Location}"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"                                                   
+                                                   FontSize="13"/>
+
+                                                    <Label Text="Detalles"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   HorizontalOptions="End"
+                                                   FontSize="13"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView x:Name="indicatorViews"
+                                   IndicatorColor="LightGray"
+                                   SelectedIndicatorColor="DarkGray"
+                                   HorizontalOptions="Center"
+                                   IndicatorSize="10"
+                                   Margin="0"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+
+                    <Frame HasShadow="False"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="2,40,20,30"
+                       HeightRequest="350"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+
+                        <StackLayout>
+                            <Label Text="Veterinarias cerca de ti"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin=".3"
+                           TextColor="Black"/>
+                            <CarouselView ItemsSource="{Binding Listamusica}"
+                  IndicatorView="Indicatorviews">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid RowDefinitions="290,4">
+                                            <Frame CornerRadius="20" 
+                                        Margin="19,10,40,40"
+                                        Padding="0"
+                                        HasShadow="False">
+                                                <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                            </Frame>
+                                            <Grid VerticalOptions="End">
+                                                <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
+                                                 Padding="36"
+                                                 MaterialBlurStyle="Light"
+                                                 MaterialTheme="AcrylicBlur"/>
+                                                <StackLayout Margin="70,40">
+
+                                                    <Label Text="{Binding Name}"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   TextColor="White"
+                                                   FontSize="13"/>
+
+                                                    <Label Text="{Binding Age}"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   FontSize="13"/>
+
+                                                    <Label Text="{Binding Location}"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"                                                   
+                                                   FontSize="13"/>
+
+                                                    <Label Text="Detalles"
+                                                   TextColor="White"
+                                                   FontFamily="{StaticResource PoppinsSemiBold}"
+                                                   HorizontalOptions="End"
+                                                   FontSize="13"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView x:Name="Indicatorviews"
+                                   IndicatorColor="LightGray"
+                                   SelectedIndicatorColor="DarkGray"
+                                   HorizontalOptions="Center"
+                                   IndicatorSize="10"
+                                   Margin="0"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0">
                     <Label Text="Adopción"
                            FontFamily="{StaticResource PoppinsSemiBold}"
                            FontSize="20"
@@ -34,11 +348,11 @@
 
                     <cardview:CarouselView   
                     ItemsSource="{Binding Listamusica}"
-                    SlideShowDuration="2000"
+                    SlideShowDuration="9000"
                     IndicatorView="indicatorview">
-                        <x:Arguments>
-                            <proc:CarouselProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1"/>
-                        </x:Arguments>
+                        --><!--<x:Arguments>
+                            <proc:CarouselProcessor ScaleFactor="0.3" OpacityFactor="0" RotationFactor="0.1"/>
+                        </x:Arguments>--><!--
 
                         <cardview:CarouselView.ItemTemplate>
                             <DataTemplate>
@@ -249,7 +563,7 @@
                 </StackLayout>
             </Grid>
         </ScrollView>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 
 
 

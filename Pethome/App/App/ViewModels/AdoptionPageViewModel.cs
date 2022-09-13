@@ -1,5 +1,6 @@
 ﻿using Pethome.Datos;
 using Pethome.Models;
+using Pethome.Views.Menu;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,14 +36,20 @@ namespace Pethome.ViewModels
             var fun = new DAdoption();
             Adoptionlist = await fun.adoptionList();
         }
-        public void ProcesoSimple()
-        {
 
+        public async Task ReturnCommand()
+        {
+            await Navigation.PopAsync();
         }
+        //public void ProcesoSimple()
+        //{
+
+        //}
         #endregion
         #region COMANDOS
        
-        public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        //public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        public ICommand returncommand => new Command(async () => await ReturnCommand());
         #endregion
     }
 }

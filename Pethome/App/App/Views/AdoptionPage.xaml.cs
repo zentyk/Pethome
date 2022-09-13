@@ -18,14 +18,7 @@ namespace Pethome.Views
             InitializeComponent();
             BindingContext = new AdoptionPageViewModel(Navigation);
         }
-        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void ImageButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
