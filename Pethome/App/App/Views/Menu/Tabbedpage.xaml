@@ -5,7 +5,8 @@
              NavigationPage.HasNavigationBar="False"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
              xmlns:local="clr-namespace:Pethome.Views.Menu"
-            android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.IsSwipePagingEnabled="False"
              android:TabbedPage.BarSelectedItemColor="White"
              android:TabbedPage.BarItemColor="#DFDFDF"
              BackgroundColor="#3CB03A">
