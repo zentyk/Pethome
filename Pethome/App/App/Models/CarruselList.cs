@@ -11,4 +11,13 @@ namespace Pethome.Models
         public string Location { get; set; }
         public string Image { get; set; }
     }
+
+    public class PethGroup
+    {
+        public PethGroup(List<CarruselList> group)
+        {
+            Groups = group;
+        }
+        public List<CarruselList> Groups { get; set; }
+    }
 }

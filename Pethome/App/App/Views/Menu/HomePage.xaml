@@ -1,17 +1,356 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:Pethome.Models" 
+             xmlns:local="clr-namespace:Pethome.ViewModels"
              x:Class="Pethome.Views.Menu.HomePage"
-             NavigationPage.HasNavigationBar="False"
-             xmlns:cardview="clr-namespace:PanCardView;assembly=PanCardView"
-             xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame" 
-             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" 
-             xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
+             x:DataType="local:HomePageViewModel"
+             NavigationPage.HasNavigationBar="False"             
              BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <local:HomePageViewModel/>
+    </ContentPage.BindingContext>
 
-    <ContentPage.Content>
+    <CollectionView 
+        IsGrouped="True"
+        ItemsLayout="VerticalList"
+        ItemsSource="{Binding Groups}"
+        VerticalOptions="Start">
+        <CollectionView.GroupHeaderTemplate>
+            <DataTemplate x:DataType="{x:Null}">
+                <StackLayout Padding="12,12,12,0">
+                    <Label FontSize="Medium"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           TextColor="Black"/>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.GroupHeaderTemplate>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:PethGroup">
+                <CollectionView ItemsLayout="HorizontalList"
+                                HeightRequest="200"
+                                ItemsSource="{Binding Groups}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:CarruselList">
+                            <Grid Padding="8,4">
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    CornerRadius="8"
+                                    HasShadow="False"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="320">
+                                    <Grid RowSpacing="0"
+                                          RowDefinitions="*,Auto,Auto,Auto">
+                                        <Image Grid.RowSpan="4" Aspect="AspectFill" Source="{Binding Image}"/>
+                                        <BoxView BackgroundColor="{StaticResource GrayColor}"
+                                                 Grid.RowSpan="4"/>
+                                        <Label Grid.RowSpan="4"
+                                               TextColor="Black"
+                                               HorizontalOptions="End"
+                                               FontSize="32"
+                                               Margin="0,-1,16,0"
+                                               FontFamily="{StaticResource PoppinsSemiBold}"
+                                               Text="Adopcion"/>
+
+                                        <Label
+                                            Grid.Row="1"
+                                            Margin="16,4,0,0"
+                                            FontSize="Medium"
+                                            Text="{Binding Name}"
+                                            TextColor="Black" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Margin="16,4,0,6"
+                                            FontSize="Small"
+                                            Text="{Binding Age}"
+                                            TextColor="Black" />
+                                        <Label
+                                            Grid.Row="3"
+                                            Margin="16,0,0,16"
+                                            FontSize="Small"
+                                            Text="{Binding Location}"
+                                            TextColor="Black" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>  
+                    
+                </CollectionView>
+                
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ContentPage>
+
+
+
+    <!--<StackLayout Grid.Row="1">
+                    <Label Text="Amigos extraviados"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin=".3"
+                           TextColor="Black"/>
+                            <cardview:CarouselView   
+                        ItemsSource="{Binding Listamusica}"
+                        IndicatorView="indicatorviews">
+                                <cardview:CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid RowDefinitions="290,4">
+                                            <Frame CornerRadius="20" 
+                                           Margin="19,40,40,40"
+                                        Padding="0"
+                                        HasShadow="False">
+                                                <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                            </Frame>
+                                            <Grid VerticalOptions="End">
+                                                <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
+                                                 Padding="36"
+                                                 MaterialBlurStyle="Light"
+                                                 MaterialTheme="AcrylicBlur"/>
+
+                                                <StackLayout Margin="70,40">
+                                                    <Label Text="{Binding Name}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+                                                    <Label Text="{Binding Age}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+                                                    <Label Text="{Binding Location}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+                                                    <Label Text="Ver mas"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"
+                                       FontSize="14"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </cardview:CarouselView.ItemTemplate>
+                            </cardview:CarouselView>
+                            <Label Text="Ver mas"
+                           TextColor="Black"
+                           FontFamily="{StaticResource PoppinsLight}"
+                           FontSize="14"
+                           Margin="50,0,50,0"
+                           HorizontalOptions="End">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Adoptcommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <IndicatorView x:Name="indicatorviews"
+                                           IndicatorColor="LightGray"
+                                           SelectedIndicatorColor="DarkGray"
+                                           HorizontalOptions="Center"
+                                           IndicatorSize="10"
+                                           Margin="0"/>
+                        </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Label Text="Veterinarias cercas de ti"
+                           FontFamily="{StaticResource PoppinsSemiBold}"
+                           FontSize="20"
+                           Margin=".3"
+                           TextColor="Black"/>
+                    <cardview:CarouselView   
+                    ItemsSource="{Binding Listamusica}"
+                    IndicatorView="indicatorViews">
+
+                        <cardview:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="290,4">
+                                    <Frame CornerRadius="20" 
+                                        Margin="19,20,40,40"
+                                        Padding="0"
+                                        HasShadow="False">
+                                        <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Grid VerticalOptions="End">
+                                        <sharpnado:MaterialFrame CornerRadius="18"
+                                                 Margin="19,40,40,40"
+                                                 Padding="36"
+                                                 MaterialBlurStyle="Light"
+                                                 MaterialTheme="AcrylicBlur"/>
+                                        <StackLayout Margin="70,40">
+                                            <Label Text="{Binding Name}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+                                            <Label Text="{Binding Age}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+                                            <Label Text="{Binding Location}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="14"/>
+                                            <Label Text="Ver mas"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End"
+                                       FontSize="14"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </cardview:CarouselView.ItemTemplate>
+                    </cardview:CarouselView>
+                    <Label Text="Ver mas"
+                           TextColor="Black"
+                           FontFamily="{StaticResource PoppinsLight}"
+                           FontSize="14"
+                           Margin="50,0,50,0"
+                           HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Adoptcommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <IndicatorView x:Name="indicatorViews"
+                                           IndicatorColor="LightGray"
+                                           SelectedIndicatorColor="DarkGray"
+                                           HorizontalOptions="Center"
+                                           IndicatorSize="10"
+                                           Margin="0"/>
+                </StackLayout>
+    </Grid>-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!--<ContentPage.Content>
         <ScrollView>
-            <StackLayout>
             <Grid Margin="20,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -83,82 +422,82 @@
                     <Label Text="Ver mas"
                            TextColor="Black"
                            FontFamily="{StaticResource PoppinsLight}"
-                           FontSize="14"                    
-                           Margin="50,0,50,0"
+                           FontSize="14"     
+                            Margin="50,0,50,0"  
                            HorizontalOptions="End">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding adoptcommand}"/>
+                            <TapGestureRecognizer Command="{Binding Adoptcommand}"/>
                         </Label.GestureRecognizers>
-
                     </Label>
-                    <IndicatorView x:Name="indicatorview"
-                                   IndicatorColor="LightGray"
-                                   SelectedIndicatorColor="DarkGray"
-                                   HorizontalOptions="Center"
-                                   IndicatorSize="10"
-                                   Margin="0"/>
-                </StackLayout>
 
-                <StackLayout Grid.Row="1">
-                    <Label Text="Amigos extraviados"
+                    <IndicatorView x:Name="indicatorview"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"                                                             
+                                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                                   IndicatorColor="LightGray"
+                                   IndicatorSize="10"
+                                   Margin="0"
+                                   SelectedIndicatorColor="Black"/>
+
+                    <StackLayout Grid.Row="1">
+                        <Label Text="Amigos extraviados"
                            FontFamily="{StaticResource PoppinsSemiBold}"
                            FontSize="20"
                            Margin=".3"
                            TextColor="Black"/>
 
-                    <cardview:CarouselView   
+                        <cardview:CarouselView   
                     ItemsSource="{Binding Listamusica}"
                     IndicatorView="indicatorviews">
-                        <cardview:CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid RowDefinitions="290,4">
-                                    <Frame CornerRadius="20" 
+                            <cardview:CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid RowDefinitions="290,4">
+                                        <Frame CornerRadius="20" 
                                            Margin="19,40,40,40"
                                         Padding="0"
                                         HasShadow="False">
-                                        <Image Source="{Binding Image}" Aspect="AspectFill"/>
-                                    </Frame>
-                                    <Grid VerticalOptions="End">
-                                        <sharpnado:MaterialFrame CornerRadius="18"
+                                            <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <Grid VerticalOptions="End">
+                                            <sharpnado:MaterialFrame CornerRadius="18"
                                                  Margin="19,40,40,40"
                                                  Padding="36"
                                                  MaterialBlurStyle="Light"
                                                  MaterialTheme="AcrylicBlur"/>
 
-                                        <StackLayout Margin="70,40">
-                                            <Label Text="{Binding Name}"
+                                            <StackLayout Margin="70,40">
+                                                <Label Text="{Binding Name}"
                                        TextColor="White"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                            <Label Text="{Binding Age}"
+                                                <Label Text="{Binding Age}"
                                        TextColor="White"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                            <Label Text="{Binding Location}"
+                                                <Label Text="{Binding Location}"
                                        TextColor="White"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
 
-                                            <Label Text="Ver mas"
+                                                <Label Text="Ver mas"
                                        TextColor="White"
                                        FontAttributes="Bold"
                                        HorizontalOptions="End"
                                        FontSize="14"/>
-                                        </StackLayout>
+                                            </StackLayout>
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </cardview:CarouselView.ItemTemplate>
-                    </cardview:CarouselView>
-                    <Label Text="Ver mas"
+                                </DataTemplate>
+                            </cardview:CarouselView.ItemTemplate>
+                        </cardview:CarouselView>
+                        <Label Text="Ver mas"
                            TextColor="Black"
                            FontFamily="{StaticResource PoppinsLight}"
                            FontSize="14"
                            Margin="50,0,50,0"
                            HorizontalOptions="End"/>
-                    <IndicatorView x:Name="indicatorviews"
+                        <IndicatorView x:Name="indicatorviews"
                                    IndicatorColor="LightGray"
                                    SelectedIndicatorColor="DarkGray"
                                    HorizontalOptions="Center"
@@ -166,8 +505,8 @@
                                    Margin="0" />
                     </StackLayout>
 
-                <StackLayout Grid.Row="2">
-                    <Label Text="Veterinarias cercas de ti"
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Veterinarias cercas de ti"
                            FontFamily="{StaticResource PoppinsSemiBold}"
                            FontSize="20"
                            Margin=".3"
@@ -177,53 +516,55 @@
                     ItemsSource="{Binding Listamusica}"
                     IndicatorView="indicatorViews">
                             <cardview:CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid RowDefinitions="290,4">
-                                    <Frame CornerRadius="20" 
+                                <DataTemplate>
+                                    <Grid RowDefinitions="290,4">
+                                        <Frame CornerRadius="20" 
                                         Margin="19,20,40,40"
                                         Padding="0"
                                         HasShadow="False">
-                                        <Image Source="{Binding Image}" Aspect="AspectFill"/>
-                                    </Frame>
-                                    <Grid VerticalOptions="End">
-                                        <sharpnado:MaterialFrame CornerRadius="18"
+                                            <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <Grid VerticalOptions="End">
+                                            <sharpnado:MaterialFrame CornerRadius="18"
                                                  Margin="19,40,40,40"
                                                  Padding="36"
                                                  MaterialBlurStyle="Light"
                                                  MaterialTheme="AcrylicBlur"/>
-                                        <StackLayout Margin="70,40">
-                                            <Label Text="{Binding Name}"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
+                                            <StackLayout Margin="70,40">
+                                                <Label Text="{Binding Name}"
+                                                   TextColor="White"
+                                                   FontAttributes="Bold"
+                                                   FontSize="14"/>
 
-                                            <Label Text="{Binding Age}"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
+                                                <Label Text="{Binding Age}"
+                                                   TextColor="White"
+                                                   FontAttributes="Bold"
+                                                   FontSize="14"/>
 
-                                            <Label Text="{Binding Location}"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
+                                                <Label Text="{Binding Location}"
+                                                   TextColor="White"
+                                                   FontAttributes="Bold"
+                                                   FontSize="14"/>
 
-                                            <Label Text="Ver mas"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="End"
-                                       FontSize="14"/>
-                                        </StackLayout>
+                                                <Label Text="Ver mas"
+                                                   TextColor="White"
+                                                   FontAttributes="Bold"
+                                                   HorizontalOptions="End"
+                                                   FontSize="14"/>
+                                            </StackLayout>
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </cardview:CarouselView.ItemTemplate>
-                    </cardview:CarouselView>
-                    <Label Text="Ver mas"
+                                </DataTemplate>
+                            </cardview:CarouselView.ItemTemplate>
+                        </cardview:CarouselView>
+                        <Label Text="Ver mas"
                            TextColor="Black"
                            FontFamily="{StaticResource PoppinsLight}"
-                           FontSize="14"
-                           Margin="50,0,50,0"
-                           HorizontalOptions="End"/>
+                           FontSize="14"        
+                           HorizontalOptions="End">
+
+
+                        </Label>
                         <IndicatorView x:Name="indicatorViews"
                                          IndicatorColor="LightGray"
                                          SelectedIndicatorColor="DarkGray"
@@ -231,10 +572,10 @@
                                          IndicatorSize="10"
                                          Margin="0"  />
                     </StackLayout>
+                </StackLayout>
             </Grid>
-            </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 
 
 
@@ -310,4 +651,3 @@
             </cardview:CardsView.ItemTemplate>
         </cardview:CoverFlowView>
     </Grid>-->
-</ContentPage>

@@ -1,8 +1,10 @@
-﻿using Pethome.Datos;
+﻿using MvvmHelpers;
+using Pethome.Datos;
 using Pethome.Models;
 using Pethome.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,38 +14,62 @@ namespace Pethome.ViewModels
 {
     public class HomePageViewModel : BaseViewModel
     {
-        #region VARIABLES
-        List<CarruselList> _listamusica;
-        #endregion
-        #region CONSTRUCTOR
-        public HomePageViewModel(INavigation navigation)
-        {
-            Navigation = navigation;
-            MostrarMusica();
-        }
+        public ObservableRangeCollection<Grouping<string, PethGroup>> Groups { get; set; }
 
-        #endregion
-        #region OBJETOS
-        public List<CarruselList> Listamusica
+        public HomePageViewModel()
         {
-            get { return _listamusica; }
-            set { SetValue(ref _listamusica, value); }
+            Groups = new ObservableRangeCollection<Grouping<string, PethGroup>>();
+
+            var groups = new List<CarruselList>();
+            groups.Add(new CarruselList
+            {
+                Name = "Marley",
+                Image = "dogs.png",
+                Age = "un año",
+                Location = "Mexico"
+            });
+            groups.Add(new CarruselList
+            {
+                Name = "Marley",
+                Image = "dogs.png",
+                Age = "un año",
+                Location = "Mexico"
+            });
+            groups.Add(new CarruselList
+            {
+                Name = "Marley",
+                Image = "dogs.png",
+                Age = "un año",
+                Location = "Mexico"
+            });
+            groups.Add(new CarruselList
+            {
+                Name = "Marley",
+                Image = "dogs.png",
+                Age = "un año",
+                Location = "Mexico"
+            });
+            groups.Add(new CarruselList
+            {
+                Name = "Marley",
+                Image = "dogs.png",
+                Age = "un año",
+                Location = "Mexico"
+            });
+            groups.Add(new CarruselList
+            {
+                Name = "Marley",
+                Image = "dogs.png",
+                Age = "un año",
+                Location = "Mexico"
+            });
+
+            var adopcion = new Grouping<string, PethGroup>("Adopcion", new[] {new PethGroup(groups.OrderBy(x => Guid.NewGuid()).ToList()) });
+            var mascotasExtraviadas = new Grouping<string, PethGroup>("Mascotas extraviadas", new[] { new PethGroup(groups.OrderBy(x => Guid.NewGuid()).ToList()) });
+            var veterianariasCerca = new Grouping<string, PethGroup>("Veterianarias cerca", new[] { new PethGroup(groups.OrderBy(x => Guid.NewGuid()).ToList()) });
+
+            Groups.AddRange(new[] { adopcion, mascotasExtraviadas, veterianariasCerca});
+
         }
-        #endregion
-        #region PROCESOS
-        public async Task MostrarMusica()
-        {
-            var funcion = new DCarrousel();
-            Listamusica = await funcion.adoption();
-        }
-        public async Task AdoptCommand()
-        {
-          await Navigation.PushAsync(new AdoptionPage());
-        }
-        #endregion
-        #region COMANDOS
-        //public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
-        public ICommand adoptcommand => new Command(async () => await AdoptCommand());
-        #endregion
     }
 }
