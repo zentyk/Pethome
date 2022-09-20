@@ -26,42 +26,51 @@ namespace Pethome.ViewModels
                 Name = "Marley",
                 Image = "dogs.png",
                 Age = "un año",
-                Location = "Mexico"
+                Location = "Mexico",
+                Bookmarked = true
+                
             });
             groups.Add(new CarruselList
             {
                 Name = "Marley",
                 Image = "dogs.png",
                 Age = "un año",
-                Location = "Mexico"
+                Location = "Mexico",
+                Bookmarked = true
             });
             groups.Add(new CarruselList
             {
                 Name = "Marley",
                 Image = "dogs.png",
                 Age = "un año",
-                Location = "Mexico"
+                Location = "Mexico",
+                Bookmarked = true
+                
             });
             groups.Add(new CarruselList
             {
                 Name = "Marley",
                 Image = "dogs.png",
                 Age = "un año",
-                Location = "Mexico"
+                Location = "Mexico",
+                Bookmarked = true
             });
             groups.Add(new CarruselList
             {
                 Name = "Marley",
                 Image = "dogs.png",
                 Age = "un año",
-                Location = "Mexico"
+                Location = "Mexico",
+                Bookmarked = true
+               
             });
             groups.Add(new CarruselList
             {
                 Name = "Marley",
                 Image = "dogs.png",
                 Age = "un año",
-                Location = "Mexico"
+                Location = "Mexico",
+                Bookmarked = true
             });
 
             var adopcion = new Grouping<string, PethGroup>("Adopcion", new[] {new PethGroup(groups.OrderBy(x => Guid.NewGuid()).ToList()) });

@@ -10,6 +10,7 @@ namespace Pethome.Models
         public string Age { get; set; }
         public string Location { get; set; }
         public string Image { get; set; }
+        public bool Bookmarked { get; set; }
     }
 
     public class PethGroup

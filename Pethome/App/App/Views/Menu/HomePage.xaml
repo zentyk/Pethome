@@ -2,14 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:models="clr-namespace:Pethome.Models" 
-             xmlns:local="clr-namespace:Pethome.ViewModels"
+             xmlns:local="clr-namespace:Pethome.ViewModels" 
+             xmlns:converters="clr-namespace:Pethome.Converters"
              x:Class="Pethome.Views.Menu.HomePage"
              x:DataType="local:HomePageViewModel"
              NavigationPage.HasNavigationBar="False"             
              BackgroundColor="White">
+    
     <ContentPage.BindingContext>
         <local:HomePageViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IsBookmarkedConverter x:Key="IsBookmarkedConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <CollectionView 
         IsGrouped="True"
@@ -20,6 +27,7 @@
             <DataTemplate x:DataType="{x:Null}">
                 <StackLayout Padding="12,12,12,0">
                     <Label FontSize="Medium"
+                           Text="{Binding Key}"
                            FontFamily="{StaticResource PoppinsSemiBold}"
                            TextColor="Black"/>
                 </StackLayout>
